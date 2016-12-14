@@ -1,0 +1,14 @@
+<h1>Edit User</h1>
+
+<form action="/users/<%= session[:user_id] %>" method="post">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <input type="hidden" name="_method" value="patch">
+  <br>Name <br><input class='name' type='text' name='Name' value="<%= @user["name"] %>"/>
+  <br>Email <br><input class='name' type='text' name='Email' value="<%= @user["email"] %>"/>
+  <br><input class='button' type='submit' value='Update'/>
+</form>
+<form action="/users/<%= session[:user_id] %>" method="post">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <input type="hidden" name="_method" value="delete">
+  <br><input class='button' type='submit' name='Delete Account' value='Delete Account'/>
+</form>
